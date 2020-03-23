@@ -5,8 +5,8 @@ ARG SBT_VERSION=1.3.8
 RUN nix-channel --add https://nixos.org/channels/$NIX_CHANNEL nix
 RUN nix-channel --update
 
-RUN nix-env --quiet --no-build-output -iA nix.jdk
 RUN nix-env --quiet --no-build-output -iA nix.coursier
+RUN nix-env --quiet --no-build-output -iA nix.graalvm8
 
 RUN coursier bootstrap --quiet --standalone sbt-launcher -o bin/sbt
 
